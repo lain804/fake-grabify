@@ -2,7 +2,7 @@ from curl_cffi import requests
 from argparse import ArgumentParser
 from bs4 import BeautifulSoup
 import random
-from constants import DEFAULT_SEND_COUNT, MAX_REFERRER_BYTES, MAX_USERAGENT_BYTES
+from fake_grabify.constants import DEFAULT_SEND_COUNT, MAX_REFERRER_BYTES, MAX_USERAGENT_BYTES
 
 def worker(url,headers):
     with requests.Session(
@@ -60,21 +60,21 @@ def main():
     parser = ArgumentParser()
 
     parser.add_argument(
-        "--user-agent","-ua", "-u", 
+        "-ua", "-u", "--user-agent", 
         type=str,
         dest="user_agent",
         default=""
     )
 
     parser.add_argument(
-        "--referrer", "--referer", "-r",
+        "-r", "--referrer", "--referer", 
         dest="referrer",
         type=str,
         default=""
     )
 
     parser.add_argument(
-        "--count", "-c",
+        "-c", "--count", 
         dest="count",
         type=int,
         default=DEFAULT_SEND_COUNT
