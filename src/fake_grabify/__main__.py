@@ -60,7 +60,7 @@ def main():
     parser = ArgumentParser()
 
     parser.add_argument(
-        "-ua", "-u", "--user-agent", 
+        "-u", "--user-agent", 
         type=str,
         dest="user_agent",
         default=""
